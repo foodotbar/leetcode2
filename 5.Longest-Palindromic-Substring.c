@@ -1,4 +1,5 @@
-ar* longestPalindrome(char* s) {
+/*
+char* longestPalindrome(char* s) {
         if (strlen(s) < 2)
             return s;
         int len = strlen(s), max_left = 0, max_len = 1, left, right;
@@ -24,7 +25,7 @@ ar* longestPalindrome(char* s) {
         return ans;
 }
 
-/*
+
 char* longestPalindrome(char* s) {
 	int len = strlen(s);
 	if (len < 2) return s;
@@ -45,4 +46,28 @@ char* longestPalindrome(char* s) {
 	s[right + 1] = '\0'; 
 	return s + left;
 }
-/*
+*/
+
+class Solution {
+public:
+    string longestPalindrome(string s) {
+        int len=s.size();
+        if(len<=1)
+            return s;
+        vector<vector<int>> dp(len,vector<int>(len,0));
+        int length=0,left=0,right=0;
+        for(int i=0;i<len;i++){
+            for(int j=0;j<i;j++){
+                dp[j][i]=((s[j]==s[i])&&(i-j<2||dp[j+1][i-1]));
+                if(dp[j][i]&&length<i-j+1){
+                    length=i-j+1;
+                    left=j;
+                    right=i;
+                }
+            dp[i][i]=1;
+            }
+        }
+        return s.substr(left,right-left+1);
+    }
+};
+
