@@ -36,3 +36,20 @@ public:
 };
 
 */
+
+
+/*
+
+class Solution {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        TreeNode* cur=root;
+        while (true) {
+            if (cur->val > max(p->val, q->val)) cur = cur->left;
+            else if (cur->val < min(p->val, q->val)) cur = cur->right;
+            else return cur;
+        }      
+    }
+};
+
+*/
