@@ -31,3 +31,22 @@ public:
         }
     }
 };
+
+/*
+
+class Solution {
+public:
+    int sumNumbers(TreeNode* root) {
+        return root2leafSum(root,0);
+    }
+    int root2leafSum(TreeNode* root,int sum){
+        if(!root)
+            return 0;
+        sum=10*sum+root->val;
+        if(!root->left&&!root->right)
+            return sum;
+        return root2leafSum(root->left,sum)+root2leafSum(root->right,sum);
+    }
+};
+
+*/
