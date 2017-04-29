@@ -24,3 +24,25 @@ public:
         return max(a,b);
     }
 };
+
+/*
+
+class Solution {
+public:
+    int rob(vector<int>& nums) {
+        if(nums.size()<=1)
+            return nums.empty()?0:nums[0];
+        return max(robHouse(nums,0,nums.size()-2),robHouse(nums,1,nums.size()-1));
+    }
+    int robHouse(vector<int>& nums,int left,int right){
+        int pre=0,cur=0;
+        for(int i=left;i<=right;i++){
+            int tmp=max(pre+nums[i],cur);
+            pre=cur;
+            cur=tmp;
+        }
+        return cur;
+    }
+};
+
+*/
