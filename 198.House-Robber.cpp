@@ -10,3 +10,24 @@ public:
         return dp.back();
     }
 };
+
+/*
+
+class Solution {
+public:
+    int rob(vector<int>& nums) {
+        int a=0,b=0;
+        for(int i=0;i<nums.size();i++){
+            if(i%2==0){
+                a+=nums[i];
+                a=max(a,b);
+            }else{
+                b+=nums[i];
+                b=max(a,b);
+            }
+        }
+        return max(a,b);
+    }
+};
+
+*/
