@@ -26,3 +26,29 @@ public:
             inorder(root->right,ret);
     }
 };
+
+/*
+
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> ret;
+        if(!root)
+            return ret;
+        stack<TreeNode *> s;
+        TreeNode* node=root;
+        while(!s.empty()||node){
+            while(node){
+                s.push(node);
+                node=node->left;
+            }
+            node=s.top();
+            s.pop();
+            ret.push_back(node->val);
+            node=node->right;
+        }
+        return ret;
+    }
+};
+
+*/
