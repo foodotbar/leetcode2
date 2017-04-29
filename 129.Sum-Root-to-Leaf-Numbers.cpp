@@ -50,3 +50,39 @@ public:
 };
 
 */
+
+/*
+
+class Solution {
+public:
+    int sumNumbers(TreeNode* root) {
+        if(!root)
+            return 0;
+        stack<TreeNode*> s1;
+        stack<int> s2;
+        s1.push(root);
+        s2.push(root->val);
+        int sum=0,ret=0;
+        while(!s1.empty()){
+            TreeNode* node=s1.top();
+            s1.pop();
+            sum=s2.top();
+            s2.pop();
+            if(!node->left&&!node->right){
+                ret+=sum;
+            }
+            if(node->right){
+                s1.push(node->right);
+                s2.push(node->right->val + 10*sum);
+            }
+            if(node->left){
+                s1.push(node->left);
+                s2.push(node->left->val + 10*sum);
+            }
+        }
+        return ret;
+    }
+};
+
+*/
+
