@@ -47,3 +47,50 @@ public:
 };
 
 */
+
+/*
+
+class Solution {
+public:
+    int kthSmallest(TreeNode* root, int k) {
+        int cnt=0;
+        stack<TreeNode*> s;
+        TreeNode* cur=root;
+        while(!s.empty()||cur){
+            while(cur){
+                s.push(cur);
+                cur=cur->left;
+            }
+            cur=s.top();
+            s.pop();
+            ++cnt;
+            if(cnt==k)
+                return cur->val;
+            cur=cur->right;
+        }
+        return 0;
+    }
+};
+
+*/
+
+/*
+
+class Solution {
+public:
+    int kthSmallest(TreeNode* root, int k) {
+        return inorder(root,k);
+    }
+    int inorder(TreeNode* root, int &k){
+        if(!root)
+            return -1;
+        int val=inorder(root->left,k);
+        if(!k)
+            return val;
+        if(!--k)
+            return root->val;
+        return inorder(root->right,k);
+    }
+};
+
+*/
