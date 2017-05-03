@@ -23,6 +23,24 @@ public:
     }
 };
 
+/*
+
+class Solution {
+public:
+    int rob(TreeNode* root) {
+        if(!root)
+            return 0;
+        int tmp=0;
+        if(root->left)
+            tmp+=rob(root->left->left)+rob(root->left->right);
+        if(root->right)
+            tmp+=rob(root->right->left)+rob(root->right->right);
+        return max(tmp+root->val,rob(root->left)+rob(root->right));
+    }
+};
+
+*/
+
 /* incorrect answer
 
 class Solution {
