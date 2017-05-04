@@ -37,3 +37,32 @@ public:
         return ret;
     }
 };
+
+/*
+
+class Solution {
+public:
+    vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+        vector<vector<int>> ret;
+        if(!root)
+            return ret;
+        zigzagTraversal(root,0,false,ret);
+        return ret;
+    }
+    void zigzagTraversal(TreeNode* root,int level,bool zig,vector<vector<int>> &ret){
+        if(!root)
+            return;
+        if(ret.size()==level);
+            ret.push_back({});
+        if(zig)
+            ret[level].insert(ret[level].begin(),root->val);
+        else
+            ret[level].push_back(root->val);
+        if(root->left)
+            zigzagTraversal(root->left,level+1,!zig,ret);
+        if(root->right)
+            zigzagTraversal(root->right,level+1,!zig,ret);
+    }
+};
+
+*/
