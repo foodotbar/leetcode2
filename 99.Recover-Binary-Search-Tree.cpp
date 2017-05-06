@@ -83,3 +83,38 @@ public:
 };
 
 */
+
+/*
+
+class Solution {
+public:
+    void recoverTree(TreeNode* root) {
+        TreeNode* first=NULL;
+        TreeNode* second=NULL;
+        TreeNode* curr=root;
+        TreeNode* prev=NULL;
+        stack<TreeNode*> s;
+        while(!s.empty()||curr){
+            //visit curr's left subtree
+            while(curr){
+                s.push(curr);
+                curr=curr->left;
+            }
+            curr=s.top();
+            s.pop();
+            //compare curr's val with prev's val if we have one
+            if(prev!=NULL&&curr->val < prev->val){
+                if(first==NULL)
+                    first=prev;//incorrect smaller node is always found as prev node
+                second=curr;//incorrect larger node is always found as curr node
+            }
+            prev=curr;
+            //visit curr's left subtree
+            curr=curr->right;
+        }
+        //recover swaped nodes
+        swap(first->val,second->val);
+    }
+};
+
+*/
