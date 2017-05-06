@@ -26,3 +26,29 @@ public:
         inorder(root->right,treelist,vallist);
     }
 };
+
+/*
+
+class Solution {
+    TreeNode* first=NULL;
+    TreeNode* second=NULL;
+    TreeNode* pre=new TreeNode(INT_MIN);
+public:
+    void recoverTree(TreeNode* root) {
+        inorder(root);
+        swap(first->val,second->val);
+    }
+    void inorder(TreeNode* root){
+        if(!root)
+            return;
+        inorder(root->left);
+        if(first==NULL&&pre->val>=root->val)
+            first=pre;
+        if(first!=NULL&&pre->val>=root->val)
+            second=root;
+        pre=root;
+        inorder(root->right);
+    }
+};
+
+*/
